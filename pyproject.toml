@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexus-userbot"
+version = "1.0.0"
+description = "Next-Generation High-Performance Modular Telegram Userbot with Luxury Custom Emoji Engine."
+readme = "README.md"
+authors = [{ name = "txltedxgod", email = "seidoutakidzava@gmail.com" }]
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Topic :: Communications :: Chat",
+]
+dependencies = [
+    "telethon>=1.36.0",
+    "python-dotenv>=1.0.0",
+    "cryptography>=42.0.0",
+    "requests>=2.31.0",
+    "aiofiles>=23.2.1",
+    "aiohttp>=3.9.0",
+    "pillow>=10.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/txltedxgod/nexus-userbot"
+Repository = "https://github.com/txltedxgod/nexus-userbot.git"
