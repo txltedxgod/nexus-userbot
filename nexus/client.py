@@ -16,7 +16,7 @@ class NexusClient(TelegramClient):
     """
     Core Nexus Userbot Client wrapping Telethon TelegramClient.
     Provides automated command dispatching, dynamic prefix resolution,
-    and event routing to registered watchers.
+    and event routing to registered watchers with AyuGram compatibility.
     """
     def __init__(
         self,
@@ -25,7 +25,16 @@ class NexusClient(TelegramClient):
         api_hash: str = config.API_HASH,
         database_path = config.DATABASE_PATH
     ):
-        super().__init__(session_name, api_id, api_hash)
+        super().__init__(
+            session_name,
+            api_id,
+            api_hash,
+            device_model=config.DEVICE_MODEL,
+            system_version=config.SYSTEM_VERSION,
+            app_version=config.APP_VERSION,
+            lang_code=config.LANG_CODE,
+            system_lang_code=config.SYSTEM_LANG_CODE
+        )
         self.db = Database(database_path)
         self.modules = ModuleManager(self, self.db)
         self.me = None
@@ -76,7 +85,7 @@ class NexusClient(TelegramClient):
 
     async def initialize(self):
         """Connect, fetch owner identity, and load modules."""
-        logger.info("Connecting to Telegram...")
+        logger.info(f"Connecting to Telegram with device profile: {config.DEVICE_MODEL}...")
         await self.connect()
         if not await self.is_user_authorized():
             logger.warning("Client is not authorized. Please run authentication first.")

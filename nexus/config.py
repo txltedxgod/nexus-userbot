@@ -20,4 +20,11 @@ class Config:
     PREMIUM_MODE: bool = os.getenv("PREMIUM_MODE", "true").lower() in ("true", "1", "yes")
     DEFAULT_THEME: str = os.getenv("DEFAULT_THEME", "neon_cyber")
 
+    # AyuGram & Desktop Client Compatibility (prevents session kicks on PC)
+    DEVICE_MODEL: str = os.getenv("DEVICE_MODEL", "AyuGram Desktop")
+    SYSTEM_VERSION: str = os.getenv("SYSTEM_VERSION", "Windows 11 x64")
+    APP_VERSION: str = os.getenv("APP_VERSION", "5.12.2 x64")
+    LANG_CODE: str = os.getenv("LANG_CODE", "en")
+    SYSTEM_LANG_CODE: str = os.getenv("SYSTEM_LANG_CODE", "en")
+
 config = Config()
