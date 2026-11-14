@@ -9,6 +9,18 @@
 
 ---
 
+## 🎬 Feature Demo
+
+<p align="center">
+  <img src="assets/demo.gif" alt="Nexus Userbot Feature Demo — Modular Telegram Userbot & Dynamic Hot-Reloading" width="840" />
+</p>
+<p align="center">
+  <sub><a href="assets/demo.mp4">Watch / Download 1080p60 MP4</a></sub>
+</p>
+
+---
+---
+
 ## ⚡ Key Highlights
 
 - **Dynamic Module Engine**: Hot-load, unload, and reload modules at runtime without dropping connections (`.load`, `.unload`, `.reload`).
